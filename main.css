@@ -1,138 +1,168 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    /*background: linear-gradient(45deg, rgb(69, 143, 97),wheat);*/
-    background-size: cover;
-    background: white;
-    min-height: 100vh;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+body {
+  /*background: linear-gradient(45deg, rgb(69, 143, 97),wheat);*/
+  background-size: cover;
+  background: white;
+  min-height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
-.container h1{
-    color: rgb(177, 59, 38);
-    font-size: 2.5rem;
-    text-align: center;
-    text-transform: uppercase;
-    margin-top: 2rem;
+.container {
+  max-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.content{
-    margin: 1rem 4rem;
+.container h1 {
+  color: rgb(177, 59, 38);
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}
+.content {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.content .card {
+  border: 1px solid rgb(77, 141, 146);
+  width: 33%;
+  transition: 0.5s;
+  background: whitesmoke;
+}
+.card:nth-child(2) {
+  margin: 0 50px;
+}
+.content .card:hover {
+  box-shadow: 0 0 1rem gray;
+  transform: scale(1.05);
+}
+.card .image {
+  position: relative;
+}
+.image img {
+  width: 100%;
+  height: 300px;
+  top: 0;
+  left: 0;
+}
+.image span {
+  border: 2px solid tomato;
+  border-radius: 50%;
+  background-color: tomato;
+  box-shadow: 0 0 0.5rem #000;
+  position: absolute;
+  color: white;
+  font-weight: bolder;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  transition: background 500ms;
+}
+.image span:hover {
+  background: white;
+  color: tomato;
+}
+.sub-container {
+  margin: 10px;
+}
+.sub-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: rgb(65, 35, 11);
+}
+.album p {
+  font-size: 1.2rem;
+  color: #000;
+  margin-left: 30px;
+}
+.album p span {
+  font-weight: bolder;
+  color: rgb(49, 34, 22);
+}
+.rate {
+  display: flex;
+  justify-content: space-between;
+}
+.rate span {
+  font-size: 1.4rem;
+  color: tomato;
+}
+.writings {
+  padding: 5px 0;
+}
+.writings p {
+  font-size: 1.2rem;
+  color: rgb(49, 34, 22);
+}
+.button {
+  position: relative;
+  padding-top: 50px;
+}
+.button a {
+  text-decoration: none;
+}
+.button .left {
+  font-size: 1.2rem;
+  color: tomato;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.button .right {
+  border: 1px solid tomato;
+  width: 120px;
+  padding: 10px;
+  color: white;
+  background: tomato;
+  cursor: pointer;
+  transition: 0.5s;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+}
+.button .right:hover {
+  border: 1px solid tomato;
+  color: tomato;
+  background: transparent;
+}
+.comments {
+  padding: 5px 0 0 0;
+  text-align: center;
+}
+.comments a {
+  text-decoration: none;
+  color: rgb(77, 141, 146);
+  font-size: 1.2rem;
+}
+.comments a:hover {
+  color: rgb(10, 55, 58);
+}
+
+@media (max-width: 1100px) {
+  .content {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+  }
+  .content .card {
+    width: 90%;
+  }
+  .card:nth-child(2) {
+    margin: 50px 0;
+  }
 }
-.content .card{
-    border: 1px solid rgb(77, 141, 146);
-    width: 23rem;
-    transition: .5s;
-    display: block;
-    background: whitesmoke;
-}
-.content .card:hover{
-    box-shadow: 0 0 1rem #000;
-    scale: 102%;
-}
-.card .image{
-    position: relative;
-}
-.image img{
-    width: 366px;
-    height: 400px;
-    top: 0;
-    left: 0;
-}
-.image span{
-    border: 2px solid tomato;
-    border-radius: 50%;
-    background-color: tomato;
-    box-shadow: 0 0 0.5rem #000;
-    position: absolute;
-    color: white;
-    font-weight: bolder;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    top: 20px;
-    right: 20px;
-    padding: 10px;
-}
-.image span:hover{
-    background: white;
-}
-.sub-container{
-    margin: 10px;
-}
-.sub-title{
-    font-size: 2rem;
-    text-transform: uppercase;
-    color: rgb(65, 35, 11);
-}
-.album p{
-    font-size: 1.2rem;
-    color: #000;
-    margin-left: 30px;
-}
-.album p span{
-    font-weight: bolder;
-    color: rgb(49, 34, 22);
-}
-.rate{
-    display: flex;
-    justify-content: space-between;
-}
-.rate span{
-    font-size: 1.4rem;
-    color: tomato;
-}
-.writings{
-    padding: 5px 0;
-}
-.writings p{
-    font-size: 1.2rem;
-    color: rgb(49, 34, 22);
-}
-.button{
-    position: relative;
-    padding-top: 50px;
-}
-.button a{
-    text-decoration: none;
-}
-.button .left{
-    font-size: 1.2rem;
-    color: tomato;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.button .right{
-    border: 1px solid tomato;
-    width: 100px;
-    padding: 5px;
-    color: white;
-    background: tomato;
-    cursor: pointer;
-    transition: .5s;
-    position: absolute;
-    right: 0;
-    bottom: 0px;
-}
-.button .right:hover{
-    border: 1px solid tomato;
-    color: tomato;
-    background: transparent;
-}
-.comments{
-    padding: 5px 0 0 0;
-    text-align: center;
-}
-.comments a{
-    text-decoration: none;
-    color: rgb(77, 141, 146);
-    font-size: 1.2rem;
-}
-.comments a:hover{
-    color: rgb(10, 55, 58);
+@media (max-width: 800px) {
+  .container h1 {
+    font-size: 1.8rem;
+  }
 }
